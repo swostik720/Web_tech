@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Event Handling Events</title>
+</head>
+<body onload="window.alert('Page successfully loaded');">
+	<script language="Javascript" type="text/Javascript">    
+	    function clickevent()  
+	    {  
+	        document.write("This is click event handledd by the javascript");  
+	    } 
+	    function mouseoverevent()  
+	    {  
+	        alert("Bangalachuli Rural Municipality");  
+	    }   
+	     function focusevent()  
+	    {  
+	        document.getElementById("input1").style.background=" aqua";  
+	    }  
+	    function keydownevent()  
+	    {  
+	        document.getElementById("input1");  
+	        alert("Pressed a key");  
+	    }  
+	</script>
+	<h2>Type of javascript Event</h2>
+	<ul>
+		<li>Mouse events</li>
+		<li>Keyboard events</li>
+		<li>Form events</li>
+		<li>Window/document events</li>
+
+	</ul>
+	<p onmouseover="mouseoverevent()"> Bangalachuli is one of biggest and remote rural municipality of dang district. This is the hilly region of the Dang from where you can see beautiful himalayan range with cold and calm environment.and it is one of the famous tourism place of Dang.</p>   
+	<form>
+		Name:<input type="text" id="input1" onkeydown="keydownevent()"  onfocus="focusevent()" value="Enter Your name"/>  
+		<input type="button" onclick="clickevent()" value="Click Me"/>  
+	</form> 
+</body>
+</html>

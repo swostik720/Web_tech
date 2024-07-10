@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      box-sizing: border-box;
+    }
+
+    #form > div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="phone"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .gender input,
+    .intrests input {
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="reset"] {
+      background-color: #6c757d;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button[type="reset"]:hover {
+      background-color: #5a6268;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    select {
+      appearance: none;
+      background-color: #fff;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%27http://www.w3.org/2000/svg%27 viewBox%3D%270 0 4 5%27%3E%3Cpath fill%3D%27%23000%27 d%3D%27M2 0L0 2h4zM2 5L0 3h4z%27/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 8px 10px;
+    }
+
+    #form > div > label + input[type="radio"] {
+      margin-top: 0;
+    }
+
+    /* Media Query for smaller screens */
+    @media (max-width: 600px) {
+      #form {
+        padding: 10px;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <form id="mainForm" action="#">
+    <div id="form">
+      <div class='name'>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+      </div>
+      <div class="address">
+        <label for="address">Address:</label>
+        <select id="address" name="address">
+          <option value="">Choose your address</option>
+          <option value="1">Nepal</option>
+          <option value="2">India</option>
+          <option value="3">China</option>
+        </select>
+      </div>
+      <div class="phone">
+        <label for="phone">Contact-no:</label>
+        <select id="code" name="code">
+          <option value="">Code</option>
+          <option value="1">+977</option>
+          <option value="2">+91</option>
+          <option value="3">+86</option>
+        </select>
+        <input type="phone" id="phone" name="phone" placeholder="Enter your contact-no">
+      </div>
+      <div class="email">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+      </div>
+      <div class="password">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+      </div>
+      <div class="faculty">
+        <label for="faculty">Faculty:</label>
+        <select id="faculty" name="faculty">
+          <option value="">Choose your faculty</option>
+          <option value="1">BSc.CSIT</option>
+          <option value="2">BIM</option>
+          <option value="3">BBA</option>
+        </select>
+      </div>
+      <div class="gender">
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender" value="male">Male <br>
+        <input type="radio" name="gender" value="female">Female
+      </div>
+      <div class="intrests">
+        <label for="intrests">Interests:</label> <br>
+        <input type="checkbox" name="coding">Coding <br>
+        <input type="checkbox" name="cricket">Cricket <br>
+        <input type="checkbox" name="football">Football <br>
+        <input type="checkbox" name="swimming">Swimming
+      </div>
+      <div class="dob">
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" id="dob" name="dob">
+      </div>
+      <div class="aboutMe">
+        <label for="aboutMe">About Me:</label><br>
+        <textarea name="aboutMe" id="aboutMe"></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </div>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const phoneCode = document.getElementById('code').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const faculty = document.getElementById('faculty').value;
+      const dob = document.getElementById('dob').value;
+      const aboutMe = document.getElementById('aboutMe').value;
+
+      if (!name) {
+        alert('Name is required');
+        return false;
+      } else if (name.length < 5) {
+        alert('Name should be at least 5 letters');
+        return false;
+      }
+
+      if (!address) {
+        alert('Address is required');
+        return false;
+      }
+
+      if (!phoneCode) {
+        alert('Phone code is required');
+        return false;
+      }
+
+      if (!phone) {
+        alert('Phone number is required');
+        return false;
+      }
+
+      if (!email) {
+        alert('Email is required');
+        return false;
+      }
+
+      if (!password) {
+        alert('Password is required');
+        return false;
+      }
+
+      if (!faculty) {
+        alert('Faculty is required');
+        return false;
+      }
+
+      if (!dob) {
+        alert('Date of Birth is required');
+        return false;
+      }
+
+      if (!aboutMe) {
+        alert('About Me is required');
+        return false;
+      }
+
+      return true;
+    }
+
+    document.getElementById('mainForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (validateForm()) {
+        alert('Form Submitted');
+        this.submit();
+      }
+    });
+
+    document.getElementById('address').addEventListener('change', function () {
+      var selectedAddress = this.value;
+      var codeSelect = document.getElementById('code');
+      if (selectedAddress === '1') {
+        codeSelect.value = '1'; // +977 for Nepal
+      } else if (selectedAddress === '2') {
+        codeSelect.value = '2'; // +91 for India
+      } else if (selectedAddress === '3') {
+        codeSelect.value = '3'; // +86 for China
+      } else {
+        codeSelect.value = ''; // Reset if "Choose your address" is selected
+      }
+    });
+
+    // Initialize Flatpickr for the date input
+    flatpickr("#dob", {
+      altInput: true,
+      altFormat: "F j, Y",
+      dateFormat: "Y-m-d",
+    });
+  </script>
+</body>
+
+</html>

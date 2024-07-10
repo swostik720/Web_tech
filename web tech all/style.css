@@ -1,0 +1,19 @@
+body {
+  background-color: lightyellow;
+}
+
+h1 {
+  color: Blue;
+  text-align: left;
+}
+
+h2 {
+  color: Red;
+  text-align: left;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: purple;
+}

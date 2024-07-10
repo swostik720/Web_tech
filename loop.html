@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Looping</title>
+</head>
+<body>
+	<h3>Looping in JavaScript</h3>
+	<ul>
+		<li>for loop</li>
+		<li>while loop</li>
+		<li>do while</li>
+		<li>for..in loop</li>
+	</ul>
+	<br><br>
+	
+	<script type="text/javascript">
+		var i=0;
+		document.write("<h3>for loop</h3>");
+		for (i=0;i<=5;i++)
+		{
+		document.write("The number is " + i);
+		document.write("<br />");
+		}
+
+		var i=10;
+		document.write("<h3>while loop</h3>");
+		while (i<=20)
+		{
+		document.write("The number is " + i);
+		document.write("<br />");
+		i++;
+		}
+
+
+		var i=30;
+		document.write("<h3>do while loop</h3>");
+		do
+		{
+		document.write("The number is " + i);
+		document.write("<br />");
+		i++;
+		}
+		while (i<=5);
+
+
+
+		document.write("<br><h1>for-in loop</h1>");
+		var x;
+		var mycars = new Array();
+		mycars[0] = "Saab";
+		mycars[1] = "Volvo"; 
+		mycars[2] ="BMW"; 
+		for (x in mycars){
+		document.write(mycars[x] + "<br />");
+		}
+
+		document.write("<br><h1>Break and Continue statement</h1><br>");
+		var j=0;
+		for (j=0;j<=10;j++)
+		{
+			if (j==3)
+			{
+			continue;
+			}
+			document.write("The number is " + j);
+			document.write("<br />");
+		}
+
+
+
+
+
+	</script>
+
+</body>
+</html>

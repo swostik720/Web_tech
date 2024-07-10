@@ -1,0 +1,3 @@
+image,first_name,last_name,joiningDate,mobile,gender,status,designation,department,dateOfBirth,education,user_id,email
+image1.jpg,John,Doe,2020-01-15,1234567890,Male,Active,Professor,Computer Science,1980-05-12,PhD,001,john.doe@example.com
+image2.jpg,Jane,Smith,2019-08-23,0987654321,Female,Active,Assistant Professor,Mathematics,1985-09-20,MSc,002,jane.smith@example.com

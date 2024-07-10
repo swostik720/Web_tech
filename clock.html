@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<script type="text/javascript">
+	function startTime()
+	{
+	var today=new Date(); 
+	var h=today.getHours(); 
+	var m=today.getMinutes(); 
+	var s=today.getSeconds();
+	// add a zero in front of numbers<10
+	//m=checkTime(m);
+	//s=checkTime(s); 
+	document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+	const t=setTimeout('startTime()',1000);
+	}
+	
+</script>
+</head>
+<body onload="startTime()">
+<div id="txt"></div>
+
+<br>
+</body>
+</html>

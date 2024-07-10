@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<h1>The Window Object</h1>
+	<h2>The clearTimeout() Method</h2>
+
+	<p>Click the button to prevent the timeout to execute. (You have 3 seconds).</p>
+
+	<h2 id="demo"></h2>
+
+	<button onclick="myStopFunction()">Stop it</button>
+
+	<script>
+		const myTimeout = setTimeout(myGreeting, 3000);
+
+		function myGreeting() {
+		  document.getElementById("demo").innerHTML = "Happy Birthday!"
+		}
+
+		function myStopFunction() {
+		  clearTimeout(myTimeout);
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  background-color: lightyellow;
+}
+
+h1 {
+  color: Blue;
+  text-align: left;
+}
+h2 {
+  color: Red;
+  text-align: left;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  color:purple;
+}
+div h3 {
+	background-color: yellow;	
+}
+div + h3 {
+	background-color: red;
+}
+div ~ h3 {
+	background-color: red;
+	color: blue;
+}

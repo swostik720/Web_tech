@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>
+Math.PI
+</title>
+<link rel="stylesheet" type="text/css" href="d">
+</head>
+
+<body onload="display()">
+	<h2>
+	Calculating area and Perimeter
+	</h2>
+	Enter radious of circle: <input id = "radious">
+	<br><br>
+	<button onclick = "fun()"> Result</button>
+	<br><br>
+	<p id = "para"></p>
+	<p id = "para1"></p>
+	<script> 
+				
+		function fun()
+		{
+		var r = document.getElementById("radious").value;
+		
+		document.getElementById('para').innerHTML = 'The area of circle with radius' +r+' is: ' + Math.PI * r * r ;
+		document.getElementById('para1').innerHTML = 'The perimeter of circle with radius '+r+' is: ' + 2 * Math.PI * r ;  
+		}
+	</script> 
+
+</body>
+
+</html>
+
+ 

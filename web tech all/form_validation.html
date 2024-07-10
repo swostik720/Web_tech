@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Admission Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="radio"] {
+        width: auto;
+    }
+    .error {
+        color: red;
+        font-size: 0.9em;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .buttons input {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        .buttons input {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>College Admission Form</h2>
+
+<form id="admissionForm" onsubmit="return validateForm()">
+    <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+        <span id="fullNameError" class="error"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <span id="emailError" class="error"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+        <small>Format: 10 digits (e.g., 1234567890)</small>
+        <span id="phoneError" class="error"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <span id="genderError" class="error"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" name="dob" id="dob">
+        <span id="dobError" class="error"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="course">Select Course:</label>
+        <select id="course" name="course">
+            <option value="">-- Please select --</option>
+            <option value="engineering">Engineering</option>
+            <option value="medicine">Medicine</option>
+            <option value="arts">Arts</option>
+            <option value="science">Science</option>
+        </select>
+        <span id="courseError" class="error"></span>
+    </div>
+    
+    <div class="form-group">
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+    </div>
+    
+    <div class="buttons">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+</form>
+</div>
+
+<script>
+function validateForm() {
+    var fullName = document.getElementById("fullName").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var gender = document.querySelector('input[name="gender"]:checked');
+    var dob = document.getElementById("dob").value;
+    var course = document.getElementById("course").value;
+
+    var isValid = true;
+
+    // Reset error messages
+    document.getElementById("fullNameError").innerHTML = "";
+    document.getElementById("emailError").innerHTML = "";
+    document.getElementById("phoneError").innerHTML = "";
+    document.getElementById("genderError").innerHTML = "";
+    document.getElementById("dobError").innerHTML = "";
+    document.getElementById("courseError").innerHTML = "";
+
+    // Validate Full Name
+    if (fullName === "") {
+        isValid = false;
+        document.getElementById("fullNameError").innerHTML = "Please enter your full name.";
+    }
+
+    // Validate Email
+    if (email === "") {
+        isValid = false;
+        document.getElementById("emailError").innerHTML = "Please enter your email address.";
+    } else if (!isValidEmail(email)) {
+        isValid = false;
+        document.getElementById("emailError").innerHTML = "Please enter a valid email address.";
+    }
+
+    // Validate Phone Number
+    if (phone === "") {
+        isValid = false;
+        document.getElementById("phoneError").innerHTML = "Please enter your phone number.";
+    } else if (!phone.match(/^\d{10}$/)) {
+        isValid = false;
+        document.getElementById("phoneError").innerHTML = "Please enter a valid 10-digit phone number.";
+    }
+
+    // Validate Gender
+    if (!gender) {
+        isValid = false;
+        document.getElementById("genderError").innerHTML = "Please select your gender.";
+    }
+
+    // Validate Date of Birth
+    if (dob === "") {
+        isValid = false;
+        document.getElementById("dobError").innerHTML = "Please enter your date of birth.";
+    }
+
+    // Validate Course Selection
+    if (course === "") {
+        isValid = false;
+        document.getElementById("courseError").innerHTML = "Please select a course.";
+    }
+
+    // Display alert if form is not valid
+    if (!isValid) {
+        alert("Please fill out all required fields correctly.");
+    }
+
+    return isValid;
+}
+
+// Function to validate email format
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+</script>
+
+</body>
+</html>

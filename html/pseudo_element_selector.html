@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		p::first-letter {
+		  color: #ff0000;
+		  font-size: xx-large;
+		}
+
+		p::first-line {
+		  color: #0000ff;
+		  font-variant: small-caps;
+		}
+		h1::before {
+		  content: "Hello!";
+		  display: innline-block;
+		 
+		}
+		
+		h1::after {
+		  content: url(Emblem.gif);
+		  display: block;
+		}
+		pre::before {
+		  content: "This is content inserter before h2 tag";
+		  display: block;
+		}
+		
+		pre::after {
+		  content: "This is content inserted after h2 tag";
+		}
+
+		::marker { 
+		  color: red;
+		  font-size: 23px;
+		}
+
+		::selection {
+		  color: red;
+		  background: yellow;
+		}
+
+	</style>
+	
+</head>
+<body>
+	<p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text.The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was an attempt from W3C to distinguish between pseudo-classes and pseudo-elements</p>
+
+	<p>The single-colon syntax was used for both pseudo-classes and pseudo-elements in CSS2 and CSS1.Forbackward compatibility, the single-colon syntax is acceptable for CSS2 and CSS1 pseudo-elements.</p>
+
+	<p>The ::first-letter pseudo-element is used to add a special style to the first letter of a text.You can combine the ::first-letter and ::first-line pseudo-elements to add a special effect to the first letter and the first line of a text</p>
+	<pre>&nbsp And &nbsp</pre>
+	<h1>Nepal</h1>
+	<h2>The ::marker pseudo-element selects the markers of list items.</h2>
+	<ul>
+		<li>Kathmandu</li>
+		<li>lalitpur</li>
+		<li>Bhaktapur</li>	
+	</ul>
+	
+
+
+</body>
+</html>

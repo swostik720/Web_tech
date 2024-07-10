@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exception Handling</title>
+</head>
+<body>
+	<script>
+		try {
+		   throw new Error('This is the throw keyword'); //user-defined throw statement.
+		}
+		catch (e) {
+		  document.write(e.message); // This will generate an error message
+		}
+
+		document.write("<br>another exception<br>");
+		try{  
+		var a= ["34","32","5","31","24","44","67"]; //a is an array  
+		document.write(a);
+		document.write(b);
+		}catch(e){  
+		alert("There is error which shows "+e.message); //Handling error  
+		}  
+	</script>
+	<h2>try catch finally</h2>
+	<br>
+	<script>  
+		try{  
+		var a=1;  
+		if(a==2)  
+		document.write("ok<br>");  
+		}  
+		catch(Error){  
+		document.write("Error found"+e.message);  
+		}  
+		finally{  
+		document.write("Value of a is 2 ");  
+		} 
+	</script>
+</body>
+</html>		

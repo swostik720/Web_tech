@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OOP in javascript</title>
+</head>
+<body>
+	<script> 
+		document.write("<h2> Creating object By literals</h2>"); 
+		emp={
+			id:102,
+			name:"Shyam Kumar",
+			salary:40000
+		}  
+		document.write(emp.id+" "+emp.name+" "+emp.salary); 
+		
+		document.write("<h2> Creating instance of object</h2>");
+		var emp=new Object();  
+		emp.id=101;  
+		emp.name="Ram";  
+		emp.salary=50000;  
+		document.write(emp.id+" "+emp.name+" "+emp.salary); 
+
+		document.write("<h2> by using constructor object</h2>");
+		function emp1(id,name,salary){  
+			this.id=id;  
+			this.name=name;  
+			this.salary=salary;  
+		}  
+		e=new emp1(103,"hari",50000);  
+		  
+		document.write(e.id+" "+e.name+" "+e.salary);  
+ 
+ 
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form validation</title>
+</head>
+	<script type="text/javascript">
+		function validate(){
+			var firstpassword=document.f1.password.value;
+			var secondpassword=document.f1.password2.value;
+			var name=document.f1.name.value;
+			var email=document.f1.email.value; 
+			var atposition=x.indexOf("@");  
+			var dotposition=x.lastIndexOf("."); 
+			if (name==null || name==""){  
+			  alert("Name can't be blank");  
+			  return false;
+			}else if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+				  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+				  return false;   
+			}else if(firstpassword.length<6){  
+			  alert("Password must be at least 6 characters long.");  
+			  return false;  
+			}else if(firstpassword==secondpassword){
+				return true;
+			}
+			else{
+				alert("password must be same!");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+
+	<form name="f1" action="valid.html" onsubmit="return validate()">
+		Name: <input type="text" name="name"><br/><br>
+		Email: <input type="email" name="email"><br/><br>   
+		Password:<input type="password" name="password" /><br/><br>
+		Re-enter Password:<input type="password" name="password2"/><br><br>
+		<input type="submit">
+
+	</form>
+
+</body>
+</html>

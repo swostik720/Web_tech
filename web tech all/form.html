@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+
+<body>
+  <form action="#">
+    <div id="form">
+      <div class='name'>
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Enter your name">
+      </div>
+      <div class="email">
+        <label for="email">Email:</label>
+        <input type="text" name="email" placeholder="Enter your email">
+      </div>
+      <div class="dob">
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" name="dob">
+      </div>
+      <div class="gender">
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender">Male <br>
+        <input type="radio" name="gender">Female
+      </div>
+      <div class="address">
+        <label for="Address">Address:</label>
+        <select name="address">
+          <option >Choose your address</option>
+          <option value="1">Ktm</option>
+          <option value="2">Pokhara</option>
+          <option value="2">Lalitpur</option>
+        </select>
+      </div>
+      <div class="intrests">
+        <label for="intrests">Intrests:</label> <br>
+          <input type="checkbox" name="coding">Coding <br>
+          <input type="checkbox" name="cricket">Cricket <br>
+          <input type="checkbox" name="football">Football <br>
+          <input type="checkbox" name="swimming">Swimming
+      </div>
+      <div>
+        <button type="submit" onclick="myFunction()">Submit</button>
+        <button type="reset" onclick="myFunction1()">Reset</button>
+      </div>
+    </div>
+  </form>
+</body>
+<script>
+  function myFunction() {
+    alert("Form Submitted");
+    document.getElementById("form").submit();
+  }
+
+  function myFunction1() {
+    document.getElementById("form").reset();
+  }
+</script>
+
+
+</html>

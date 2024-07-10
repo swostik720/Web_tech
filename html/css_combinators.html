@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		div p {
+		  color: red;
+		}
+		div > pre {
+		  background-color: blue;
+		}
+		h2 + p {
+		  background-color: yellow;
+		}
+		h2 ~ pre {
+		  color: purple;
+		}
+	</style>
+</head>
+<body>
+
+	<h2>Descendant Selector</h2>
+
+	<div>
+	  <p>Nepal is of roughly trapezoidal shape, about 800 kilometres (500 mi) long and 200 kilometres (120 mi) wide, with an area of 147,516 km2 (56,956 sq mi). </p>
+
+	  <p>Simultaneously, the vast Tethyn oceanic crust, to its northeast, began to subduct under the Eurasian plate.</p>
+	  <section>
+	    <!-- not Child but Descendant -->
+	    <p>Immediately south of the emerging Himalayas, plate movement created a vast trough that rapidly filled with river-borne sediment[77] and now constitutes the Indo-Gangetic Plain.[76]</p>
+	  </section>
+	  <p>Paragraph 4 in the div.</p>
+	</div>
+	<h2>child Selector</h2>
+	<div>
+		<pre>
+			सोच र कार्यको सँकुचित लक्ष्य छ! स्पर्शमा।
+			सानो कदम चाले अवश्य छुन सकिन्छ चन्द्रमा।।
+			
+		</pre>
+		<section>
+			<pre>
+				जरुरी छैन लुकाउन त्यो दुख अनि देखाउन त्यो वेदना।
+				गल्ती नभए नि माफी लेउ, प्रकट गर्देउ त्यो कृतज्ञता। 
+			</pre>
+		</section>
+
+	</div>
+
+	<h2>Adjacent Sibling selector</h2>
+	<p>Paragraph 5. Not in a div.</p>
+	<p>Paragraph 6. Not in a div.</p>
+
+	<h2>General Sibling  Selector</h2>
+	<pre>
+		येथेष्ट प्रेम काफी छ, अथाह त मात्र देखावटि
+		भुल ती अतितका कुरा अनि छोड त्यो भबिस्यबाणी।।
+	</pre>
+	<pre>
+		जिम्मेवारीले तर्सीएर हिड्दै छाै सहकार्यको खोजमा।
+		अपरिहार्य छ परिवर्तन तिम्रो त्यो सोच मा।।
+	</pre>
+	<pre>Hello 
+			where are you from
+	</pre>
+
+</body>
+</html>
+
+
